@@ -1,2 +1,2 @@
 # standup
-node js demo app standup meetings
+node.js demo app - standup meetings
