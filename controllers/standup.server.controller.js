@@ -6,6 +6,9 @@ exports.list = function(req, res) {
     query.sort({ createdOn: 'desc'})
         .limit(12)
         .exec(function(err, results){
+            if (err) {
+                res.status(500).send(err);
+            }
            res.render('index', {title: 'Standup - List', notes: results});
         });
 
@@ -53,4 +56,4 @@ exports.create = function(req, res) {
 
 exports.getNote = function (req, res) {
     res.render('newnote', { title: 'Standup - New Note'});
-}
+};
